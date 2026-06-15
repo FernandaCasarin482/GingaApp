@@ -99,61 +99,17 @@
            </div>
         </div>
 
-        <!-- Section: Nossa Equipe -->
-        <div class="equipe-header">
-           <div class="equipe-title-wrap">
-              <span class="font-bebas-ui text-red" style="font-size: 10px;">QUEM SOMOS NÓS</span>
-              <h2 class="font-bebas text-red" style="font-size: 24px;">NOSSA EQUIPE</h2>
-           </div>
-           <button class="btn-ver-todos font-bebas-ui">VER TODOS →</button>
-        </div>
-
-        <div class="equipe-grid">
-           <!-- Person 1 -->
-           <div class="equipe-card">
-              <div class="profile-pic-wrap">
-                 <img src="IMG/BOI%20BATENDO%20PALMA.png" alt="Ana Silva" />
-              </div>
-              <h4 class="font-bebas text-red">DRA. ANA SILVA</h4>
-              <span class="font-bebas-ui">COORDENADORA</span>
-           </div>
-           <!-- Person 2 -->
-           <div class="equipe-card">
-              <div class="profile-pic-wrap">
-                 <img src="IMG/BOI%20BATENDO%20PALMA.png" alt="Marcos Rocha" />
-              </div>
-              <h4 class="font-bebas text-red">MARCOS ROCHA</h4>
-              <span class="font-bebas-ui">DESIGNER</span>
-           </div>
-           <!-- Person 3 -->
-           <div class="equipe-card">
-              <div class="profile-pic-wrap">
-                 <img src="IMG/BOI%20BATENDO%20PALMA.png" alt="Lídia Bento" />
-              </div>
-              <h4 class="font-bebas text-red">LÍDIA BENTO</h4>
-              <span class="font-bebas-ui">MESTRE DE RITMOS</span>
-           </div>
-           <!-- Person 4 -->
-           <div class="equipe-card">
-              <div class="profile-pic-wrap">
-                 <img src="IMG/BOI%20BATENDO%20PALMA.png" alt="Prof. Caio Luna" />
-              </div>
-              <h4 class="font-bebas text-red">PROF. CAIO LUNA</h4>
-              <span class="font-bebas-ui">HISTORIADOR</span>
-           </div>
-        </div>
-
         <!-- Footer Connect -->
         <div class="sobre-footer">
            <h3 class="font-bebas text-red">FIQUE CONECTADO</h3>
            <div class="social-links">
-              <a href="#" class="social-icon-circle bg-red-light">
+              <a href="#" class="social-icon-circle bg-red-light" onclick="event.preventDefault(); alert('Em breve! Nossas redes sociais ainda estão em construção. Fique ligado!')">
                  <svg viewBox="0 0 24 24" fill="none" stroke="var(--clr-red)" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
               </a>
-              <a href="#" class="social-icon-circle bg-red-light">
+              <a href="#" class="social-icon-circle bg-red-light" onclick="event.preventDefault(); if(navigator.share) { navigator.share({ title: 'Ginga+ Digital', text: 'Venha aprender danças brasileiras no Ginga+ Digital!', url: window.location.origin + window.location.pathname.replace('sobre.html', 'index.html') }) } else { alert('Seu navegador não suporta a função de compartilhar nativa.') }">
                  <svg viewBox="0 0 24 24" fill="none" stroke="var(--clr-red)" stroke-width="2"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
               </a>
-              <a href="#" class="social-icon-circle bg-red-light">
+              <a href="#" class="social-icon-circle bg-red-light" onclick="event.preventDefault(); alert('Em breve! Nossas redes sociais ainda estão em construção. Fique ligado!')">
                  <svg viewBox="0 0 24 24" fill="none" stroke="var(--clr-red)" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
               </a>
            </div>
