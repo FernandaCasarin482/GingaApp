@@ -5074,11 +5074,7 @@ input:checked+.slider:before {
   border-color: var(--clr-red) !important;
 }
 
-[data-theme="dark"] .node-completed svg,
-[data-theme="dark"] .node-completed svg polyline,
-[data-theme="dark"] .node-completed svg path {
-  stroke: #FFF !important;
-}
+
 
 [data-theme="dark"] .progress-label {
   color: #E0E0E0 !important;
