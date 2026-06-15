@@ -1208,7 +1208,7 @@ body {
    ================================================================ */
 
 .bottom-nav {
-  position: absolute;
+  position: sticky;
   bottom: 0;
   left: 0;
   width: 100%;
@@ -5031,6 +5031,12 @@ input:checked+.slider:before {
   color: var(--text-subtitle) !important;
 }
 
+[data-theme="dark"] .ritmo-card-content h2,
+[data-theme="dark"] .ritmo-card-content p {
+  color: #FFF !important;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+}
+
 /* Blobs and Accents */
 [data-theme="dark"] .blob-title {
   background-color: var(--bg-card-alt) !important;
@@ -5649,3 +5655,23 @@ input:checked+.slider:before {
     transform: translateY(0);
   }
 }
+/* ================================================================
+   TELA SOBRE - CONTRASTE MODO ESCURO
+   ================================================================ */
+[data-theme="dark"] .bg-red-light { background: rgba(255, 75, 75, 0.15) !important; }
+[data-theme="dark"] .bg-yellow-light { background: rgba(253, 199, 56, 0.15) !important; }
+[data-theme="dark"] .bg-teal-light { background: rgba(72, 190, 180, 0.15) !important; }
+[data-theme="dark"] .bg-white { background: var(--bg-card-alt) !important; }
+
+[data-theme="dark"] .missao-card p,
+[data-theme="dark"] .curadoria-card p,
+[data-theme="dark"] .small-info-card span {
+  color: #E0E0E0 !important;
+}
+
+[data-theme="dark"] .text-red { color: #FF8585 !important; }
+[data-theme="dark"] .text-dark-red { color: #FF6B6B !important; }
+[data-theme="dark"] .text-teal-dark { color: #5CE0D3 !important; }
+
+[data-theme="dark"] .equipe-card span { color: #A0A0A0 !important; }
+

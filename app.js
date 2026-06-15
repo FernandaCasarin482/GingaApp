@@ -13,9 +13,9 @@
   
   const hasApelido = localStorage.getItem('ginga_apelido');
 
-  // Se já tem apelido e está na tela inicial/login, pula direto para a dança
+  // Se já tem apelido e está na tela inicial/login, pula direto para ritmos
   if ((currentPage === 'index.html' || currentPage === '' || currentPage === 'login.html' || currentPage === 'criar-conta.html') && hasApelido) {
-    window.location.replace('danca.html');
+    window.location.replace('ritmos.html');
     return;
   }
   
@@ -270,7 +270,7 @@ function initNavigation() {
       setTimeout(() => {
         const apelidoMock = email.split('@')[0];
         localStorage.setItem('ginga_apelido', apelidoMock);
-        window.location.href = 'danca.html';
+        window.location.href = 'ritmos.html';
       }, 500);
     });
   }
