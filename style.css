@@ -5074,8 +5074,42 @@ input:checked+.slider:before {
   border-color: var(--clr-red) !important;
 }
 
-[data-theme="dark"] .node-completed svg {
+[data-theme="dark"] .node-completed svg,
+[data-theme="dark"] .node-completed svg polyline,
+[data-theme="dark"] .node-completed svg path {
   stroke: #FFF !important;
+}
+
+[data-theme="dark"] .progress-label {
+  color: #E0E0E0 !important;
+  font-weight: 500 !important;
+  letter-spacing: 0.5px;
+}
+
+[data-theme="dark"] .progress-num {
+  color: #FFF !important;
+}
+
+[data-theme="dark"] .progress-num small {
+  color: #CCCCCC !important;
+  font-weight: 600 !important;
+}
+
+[data-theme="dark"] .conquista-card h4 {
+  color: #FF8585 !important;
+  letter-spacing: 0.5px;
+  font-weight: 600 !important;
+}
+
+[data-theme="dark"] .conquista-card p {
+  color: #E0E0E0 !important;
+  font-weight: 500 !important;
+  letter-spacing: 0.2px;
+}
+
+[data-theme="dark"] .stat-pill-red span,
+[data-theme="dark"] .pill-mestre {
+  font-weight: 600 !important;
 }
 
 /* ================================================================
@@ -5698,33 +5732,5 @@ input:checked+.slider:before {
   background: var(--bg-card-alt) !important;
 }
 
-[data-theme="dark"] .progress-label {
-  color: #E0E0E0 !important;
-  font-weight: 700 !important;
-  letter-spacing: 0.5px;
-}
 
-[data-theme="dark"] .progress-num {
-  color: #FFF !important;
-}
-
-[data-theme="dark"] .progress-num small {
-  color: #CCCCCC !important;
-  font-weight: 700 !important;
-}
-
-[data-theme="dark"] .conquista-card h4 {
-  color: #FF8585 !important;
-  letter-spacing: 1px;
-}
-
-[data-theme="dark"] .conquista-card p {
-  color: #E0E0E0 !important;
-  font-weight: 700 !important;
-}
-
-[data-theme="dark"] .stat-pill-red span,
-[data-theme="dark"] .pill-mestre {
-  font-weight: 700 !important;
-}
 
