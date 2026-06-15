@@ -3,6 +3,28 @@
    Interações: ripple, navegação futura, acessibilidade por teclado
    ================================================================ */
 
+// ================================================================
+// AUTH GUARD & AUTO-LOGIN (Local Storage)
+// ================================================================
+(function() {
+  const publicPages = ['index.html', 'login.html', 'criar-conta.html', 'apelido.html', ''];
+  const currentPath = window.location.pathname;
+  const currentPage = currentPath.substring(currentPath.lastIndexOf('/') + 1) || 'index.html';
+  
+  const hasApelido = localStorage.getItem('ginga_apelido');
+
+  // Se já tem apelido e está na tela inicial/login, pula direto para a dança
+  if ((currentPage === 'index.html' || currentPage === '' || currentPage === 'login.html' || currentPage === 'criar-conta.html') && hasApelido) {
+    window.location.replace('danca.html');
+    return;
+  }
+  
+  // Se não tem apelido e está tentando acessar tela interna, bloqueia
+  if (!publicPages.includes(currentPage) && !hasApelido) {
+    window.location.replace('index.html');
+  }
+})();
+
 document.addEventListener('DOMContentLoaded', () => {
   initNavigation();
   initSettingsModal();
@@ -19,14 +41,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const btnLogout = document.getElementById('btnLogout');
   if (btnLogout) {
-    btnLogout.addEventListener('click', async () => {
+    btnLogout.addEventListener('click', async (e) => {
+      e.preventDefault();
       btnLogout.innerHTML = '<span class="btn-label">SAINDO...</span>';
-      if (window.supabaseAPI) {
-        await window.supabaseAPI.signOut();
-      }
+      
+      // Limpa os dados locais
+      localStorage.removeItem('ginga_apelido');
+      localStorage.removeItem('ginga_isGuest');
       localStorage.clear();
-      sessionStorage.clear();
-      window.location.href = 'login.html';
+      localStorage.clear();
+      window.location.href = 'index.html';
     });
   }
 });
@@ -101,7 +125,7 @@ function initSettingsModal() {
           <div class="setting-item" style="border-bottom: none;">
             <div class="setting-label-wrap">
               <div class="setting-icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1-4-10z"></path></svg>
               </div>
               <span class="setting-text">Idioma</span>
             </div>
@@ -235,78 +259,38 @@ function initNavigation() {
   if (formLogin) {
     formLogin.addEventListener('submit', async (e) => {
       e.preventDefault();
+      const btn = formLogin.querySelector('button[type="submit"]');
+      const originalText = btn.textContent;
+      btn.textContent = 'ENTRANDO...';
       
       const email = document.getElementById('login-email').value;
-      const senha = document.getElementById('login-senha').value;
-      const btn = formLogin.querySelector('button[type="submit"]');
       
-      if (btn) btn.innerHTML = '<span class="btn-label">CARREGANDO...</span>';
-      
-      if (window.supabaseAPI) {
-        const { data, error } = await window.supabaseAPI.signIn(email, senha);
-        if (error) {
-          alert('Erro ao fazer login: ' + error.message);
-          if (btn) btn.innerHTML = '<span class="btn-label">ENTRAR</span>';
-          return;
-        }
-        
-        // Load progress from cloud to local storage after successful login
-        const cloudData = await window.supabaseAPI.loadProgressFromCloud();
-        if (cloudData) {
-           if(cloudData.apelido) localStorage.setItem('ginga_apelido', cloudData.apelido);
-           if(cloudData.personagem) localStorage.setItem('ginga_personagem', cloudData.personagem);
-           if(cloudData.quadrilha_progress) localStorage.setItem('ginga_quadrilha_progress', cloudData.quadrilha_progress);
-           if(cloudData.hiphop_progress) localStorage.setItem('ginga_hiphop_progress', cloudData.hiphop_progress);
-           if(cloudData.gaucha_progress) localStorage.setItem('ginga_gaucha_progress', cloudData.gaucha_progress);
-           if(cloudData.afro_progress) localStorage.setItem('ginga_afro_progress', cloudData.afro_progress);
-           if(cloudData.achievements_unlocked) localStorage.setItem('ginga_achievements_unlocked', JSON.stringify(cloudData.achievements_unlocked));
-        }
-      }
-      
-      window.location.href = 'ritmos.html';
+      // Em modo 100% offline, vamos apenas mockar um login definindo um apelido
+      // extraído do email, para não quebrar a experiência de quem usa a tela de login.
+      setTimeout(() => {
+        const apelidoMock = email.split('@')[0];
+        localStorage.setItem('ginga_apelido', apelidoMock);
+        window.location.href = 'danca.html';
+      }, 500);
     });
   }
 
   /* ── Protótipo: Formulário de Criar Conta ── */
-  const formCriarConta = document.getElementById('form-criar-conta');
-  if (formCriarConta) {
-    formCriarConta.addEventListener('submit', async (e) => {
+  const formSignup = document.getElementById('form-signup');
+  if (formSignup) {
+    formSignup.addEventListener('submit', async (e) => {
       e.preventDefault();
+      const btn = formSignup.querySelector('button[type="submit"]');
+      const originalText = btn.textContent;
+      btn.textContent = 'CRIANDO...';
       
-      const email = document.getElementById('email').value;
-      const senha = document.getElementById('senha').value;
-      const nome = document.getElementById('nome').value;
-      const confirmar = document.getElementById('confirmar').value;
-      const btn = formCriarConta.querySelector('button[type="submit"]');
+      const nome = document.getElementById('signup-nome').value;
       
-      if (senha !== confirmar) {
-        alert('As senhas não coincidem!');
-        return;
-      }
-      
-      if (btn) btn.innerHTML = '<span class="btn-label">CARREGANDO...</span>';
-      
-      if (window.supabaseAPI) {
-        const { data, error } = await window.supabaseAPI.signUp(email, senha, nome);
-        if (error) {
-          alert('Erro ao criar conta: ' + error.message);
-          if (btn) btn.innerHTML = '<span class="btn-label">CRIAR MINHA CONTA</span>';
-          return;
-        }
-        
-        // Create initial cloud profile
-        await window.supabaseAPI.saveProgressToCloud({
-           apelido: nome,
-           personagem: 'IMG/BOI DANÇANDO.png',
-           quadrilha_progress: 1,
-           hiphop_progress: 1,
-           gaucha_progress: 1,
-           afro_progress: 1,
-           achievements_unlocked: []
-        });
-      }
-      
-      window.location.href = 'apelido.html';
+      // Salva o apelido no modo offline e redireciona
+      setTimeout(() => {
+        localStorage.setItem('ginga_apelido', nome);
+        window.location.href = 'apelido.html';
+      }, 500);
     });
   }
 
@@ -316,12 +300,11 @@ function initNavigation() {
     formApelido.addEventListener('submit', (e) => {
       e.preventDefault();
 
-      // Salva o apelido no localStorage e na nuvem
+      // Salva o apelido no localStorage
       const inputApelido = document.getElementById('apelido-input');
       if (inputApelido && inputApelido.value.trim() !== "") {
         const apelidoValue = inputApelido.value.trim();
         localStorage.setItem('ginga_apelido', apelidoValue);
-        if (window.supabaseAPI) window.supabaseAPI.saveProgressToCloud({ apelido: apelidoValue });
       }
 
       // Verifica se viemos da tela de perfil para redirecionar de volta
@@ -358,8 +341,8 @@ function initNavigation() {
       const selectedGingaCard = document.querySelector('.ginga-card.selected img');
       if (selectedGingaCard) {
         const src = selectedGingaCard.getAttribute('src');
+        // Salva localmente
         localStorage.setItem('ginga_personagem', src);
-        if (window.supabaseAPI) window.supabaseAPI.saveProgressToCloud({ personagem: src });
       }
 
       // Verifica se viemos da tela de perfil para redirecionar corretamente
@@ -500,7 +483,7 @@ function updateProfileStats() {
   let modulesCompleted = 0;
 
   rhythms.forEach(r => {
-    const progress = parseInt(sessionStorage.getItem(`ginga_${r}_progress`)) || 1;
+    const progress = parseInt(localStorage.getItem(`ginga_${r}_progress`)) || 1;
     // Nodes are 1-24. Milestones/Stars at 4, 8, 12, 16, 20. Trophy at 24.
     if (progress > 4) totalTrophies++;
     if (progress > 8) totalTrophies++;
@@ -586,7 +569,7 @@ function initProgression() {
 
     // Popula o indicador de dificuldade na tela danca.html
     const dancaDiffEl = document.getElementById('dancaDiffIndicator');
-    const currentLevel = parseInt(sessionStorage.getItem('ginga_current_playing_level')) || 1;
+    const currentLevel = parseInt(localStorage.getItem('ginga_current_playing_level')) || 1;
     const dancaPhase = (currentLevel - 1) % 4; // 0=fácil, 1=intermediário, 2=difícil
     const dNames = ['NÍVEL FÁCIL', 'NÍVEL INTERMEDIÁRIO', 'NÍVEL DIFÍCIL'];
     const dClasses = ['dot-easy', 'dot-medium', 'dot-hard'];
@@ -678,7 +661,7 @@ window.openVideoModal = function(levelId) {
   }
 
   // ── Determina o ID do YouTube ──
-  const role = sessionStorage.getItem('ginga_dance_role') || 'cavalheiro';
+  const role = localStorage.getItem('ginga_dance_role') || 'cavalheiro';
   let seriesNum = Math.floor((levelId - 1) / 4) + 1;
   const letters = ['A', 'B', 'C'];
   const letter = letters[phase] || 'A';
@@ -734,14 +717,14 @@ function renderTrilha(container) {
   else if (currentPath.includes('gaucha')) rhythm = 'gaucha';
   else if (currentPath.includes('afro')) rhythm = 'afro';
   
-  sessionStorage.setItem('ginga_current_rhythm', rhythm);
+  localStorage.setItem('ginga_current_rhythm', rhythm);
   let progressKey = `ginga_${rhythm}_progress`;
 
-  // Utilizando sessionStorage para não persistir o progresso ao fechar o app durante a fase de testes
-  let progress = parseInt(sessionStorage.getItem(progressKey));
+  // Utilizando localStorage para não persistir o progresso ao fechar o app durante a fase de testes
+  let progress = parseInt(localStorage.getItem(progressKey));
   if (isNaN(progress)) {
     progress = 1;
-    sessionStorage.setItem(progressKey, 1);
+    localStorage.setItem(progressKey, 1);
   }
 
   const nodes = [
@@ -967,7 +950,7 @@ function renderTrilha(container) {
         if (isFinal) {
           nodeHtml = `
             <div class="node-wrapper" style="${styleStr}">
-              <a href="#" class="node ${nodeClass}" style="text-decoration: none; display: flex; ${customStyle}" onclick="event.preventDefault(); openVideoModal(${node.id})">
+              <a href="#" class="node ${nodeClass}" style="text-decoration: none; display: flex; ${customStyle}" onclick="event.preventDefault(); openRoleModal(${node.id})">
                 <img src="IMG/${currentMilestoneIcon}" alt="${node.title}" class="${imgClass}" />
               </a>
               <div class="node-label ${labelClass}">${node.title}</div>
@@ -976,7 +959,7 @@ function renderTrilha(container) {
         } else {
           nodeHtml = `
             <div class="node-wrapper" style="${styleStr}">
-              <a href="${node.link}" class="node ${nodeClass}" style="text-decoration: none; display: flex; ${customStyle}" onclick="saveCurrentLevel(${node.id})">
+              <a href="#" class="node ${nodeClass}" style="text-decoration: none; display: flex; ${customStyle}" onclick="event.preventDefault(); openRoleModal(${node.id})">
                 <img src="IMG/${currentMilestoneIcon}" alt="${node.title}" class="${imgClass}" />
               </a>
               <div class="node-label ${labelClass}">${node.title}</div>
@@ -993,20 +976,18 @@ function renderTrilha(container) {
 }
 
 window.saveCurrentLevel = function (levelId) {
-  sessionStorage.setItem('ginga_current_playing_level', levelId);
+  localStorage.setItem('ginga_current_playing_level', levelId);
 };
 
 window.completeCurrentLevel = function () {
-  const current = parseInt(sessionStorage.getItem('ginga_current_playing_level'));
-  const rhythm = sessionStorage.getItem('ginga_current_rhythm') || 'quadrilha';
+  const current = parseInt(localStorage.getItem('ginga_current_playing_level'));
+  const rhythm = localStorage.getItem('ginga_current_rhythm') || 'quadrilha';
   const progressKey = `ginga_${rhythm}_progress`;
-  const progress = parseInt(sessionStorage.getItem(progressKey)) || 1;
+  const progress = parseInt(localStorage.getItem(progressKey)) || 1;
 
   if (current === progress) {
-    sessionStorage.setItem(progressKey, progress + 1);
-    if (window.supabaseAPI) {
-      window.supabaseAPI.saveProgressToCloud({ [`${rhythm}_progress`]: progress + 1 });
-    }
+    // Salva no localStorage (modo offline)
+    localStorage.setItem(progressKey, progress + 1);
   }
 };
 
@@ -1089,11 +1070,11 @@ function initRoleModal() {
   document.querySelectorAll('.btn-role').forEach(btn => {
     btn.addEventListener('click', () => {
       const role = btn.dataset.role;
-      sessionStorage.setItem('ginga_dance_role', role);
+      localStorage.setItem('ginga_dance_role', role);
       modal.classList.remove('active');
 
       const levelId = parseInt(modal.dataset.levelId);
-      const rhythm = sessionStorage.getItem('ginga_current_rhythm') || 'quadrilha';
+      const rhythm = localStorage.getItem('ginga_current_rhythm') || 'quadrilha';
 
       // Para a trilha quadrilha que tem videoModal embutido
       if (rhythm === 'quadrilha' && document.getElementById('videoModal')) {
@@ -1263,12 +1244,9 @@ function getUnlockedAchievements() {
 
 function unlockAchievement(id) {
   const unlocked = getUnlockedAchievements();
-  if (unlocked.includes(id)) return false; // já desbloqueada
+  if (unlocked.includes(id)) return false;  // Salva a lista inteira (offline)
   unlocked.push(id);
   localStorage.setItem('ginga_achievements', JSON.stringify(unlocked));
-  if (window.supabaseAPI) {
-    window.supabaseAPI.saveProgressToCloud({ achievements_unlocked: unlocked });
-  }
   return true; // nova conquista!
 }
 
@@ -1281,7 +1259,7 @@ function checkAchievements() {
   const trilhasCompletas = { quadrilha: false, hiphop: false, gaucha: false, afro: false };
 
   rhythms.forEach(r => {
-    const progress = parseInt(sessionStorage.getItem(`ginga_${r}_progress`)) || 1;
+    const progress = parseInt(localStorage.getItem(`ginga_${r}_progress`)) || 1;
     const completedInRhythm = progress - 1; // progress=1 means 0 completed
     totalCompleted += completedInRhythm;
     if (completedInRhythm >= 1) trilhasComProgresso++;
@@ -1310,7 +1288,7 @@ function checkAchievements() {
 
   // Gingado de Ouro: desbloquear uma estrela (progress >= 5 em qualquer ritmo, pois nó 4 é estrela)
   const hasReachedStar = rhythms.some(r => {
-    const p = parseInt(sessionStorage.getItem(`ginga_${r}_progress`)) || 1;
+    const p = parseInt(localStorage.getItem(`ginga_${r}_progress`)) || 1;
     return p > 4;
   });
   if (hasReachedStar && unlockAchievement('gingado_ouro')) {
@@ -1478,7 +1456,7 @@ function initRecompensaScreen() {
   const recompensaSubtitle = document.querySelector('.recompensa-screen .recompensa-subtitle');
   if (!recompensaSubtitle) return;
 
-  const currentLevel = parseInt(sessionStorage.getItem('ginga_current_playing_level')) || 4;
+  const currentLevel = parseInt(localStorage.getItem('ginga_current_playing_level')) || 4;
 
   let text = 'Você completou um passo de dança<br>e está dominando a ginga!';
   
