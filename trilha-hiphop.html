@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="GINGA! – Trilha Hip-Hop" />
+  <title>GINGA! – Trilha Hip-Hop</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="shell" role="main">
+    <div class="screen trilha-screen">
+      
+      <!-- ===== HEADER: Topbar ===== -->
+      <header class="ginga-topbar">
+        <button class="btn-back btn-back-to-ritmos" aria-label="Voltar">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+        </button>
+        <span class="ginga-topbar-title font-bebas">GINGA+</span>
+        <div class="ginga-topbar-actions">
+          <button class="btn-settings" aria-label="Configurações">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
+          </button>
+          <a href="perfil.html" class="user-avatar-wrap">
+            <img src="IMG/HIPHOP%20DAN%C3%87ANDO.png" alt="Avatar" class="user-avatar" />
+            <span class="music-note-small avatar-note" aria-hidden="true"><img src="IMG/NOTA%20MUSICAL.png" alt="" /></span>
+          </a>
+        </div>
+      </header>
+
+      <main class="trilha-main">
+        
+        <!-- ===== HERO AREA ===== -->
+        <div class="trilha-hero">
+          <img src="IMG/abertura%20hiphop.png" alt="Hip-Hop" class="trilha-hero-img" />
+          <div class="tag-modulo font-bebas-ui">MÓDULO 1</div>
+          <h1 class="font-bebas trilha-title">TRILHA HIP-HOP</h1>
+          <p class="trilha-subtitle">
+            Solte o beat e domine os passos<br>da cultura urbana.
+          </p>
+        </div>
+
+        <!-- ===== PATH AREA ===== -->
+        <div class="trilha-path-container">
+          
+          <!-- Decorative Background Elements -->
+          <img src="IMG/desenho%20hiphop.png" alt="" class="bg-fire" style="top: 35%; right: 5%;" />
+          <img src="IMG/desenho%20hiphop.png" alt="" class="bg-fire" style="top: 60%; left: 5%;" />
+
+          <!-- Background SVG Line for the path -->
+          <svg class="path-line" viewBox="0 0 100 1200" preserveAspectRatio="none">
+            <path d="M50 0 C 80 150, 20 250, 50 400 C 80 550, 20 650, 50 800 C 80 1000, 20 1100, 50 1200" stroke="#FFD868" stroke-width="4" fill="none" stroke-linecap="round"/>
+          </svg>
+
+          <!-- Nodes List -->
+          <div class="nodes-list">
+
+            <!-- Node 1: Active -->
+            <div class="node-wrapper" style="transform: translateX(25px);">
+              <a href="#" onclick="event.preventDefault(); openRoleModal(1)" class="node node-active anim-pulse-fast" style="text-decoration: none; display: flex;">
+                <img src="IMG/icone%20bandeira.png" alt="Bandeira" class="node-img-icon" />
+                <svg class="progress-ring" viewBox="0 0 100 100">
+                  <circle cx="50" cy="50" r="46" fill="none" stroke="#FFF" stroke-width="6" stroke-dasharray="200" stroke-dashoffset="200" />
+                </svg>
+              </a>
+              <div class="node-label label-yellow">INICIANTE</div>
+            </div>
+
+            <!-- Node 2: Locked -->
+            <div class="node-wrapper" style="transform: translateX(-35px); margin-top: 60px;">
+              <div class="node node-locked">
+                <img src="IMG/icone%20cadeado.png" alt="Cadeado" class="node-img-icon" />
+              </div>
+              <div class="node-label label-white">OS PASSOS</div>
+            </div>
+            <!-- Os nós da trilha serão inseridos aqui pelo JavaScript de acordo com o progresso -->
+          </div>
+        </div>
+
+        <!-- ===== FOOTER AREA ===== -->
+        <div class="trilha-footer">
+          <p class="trilha-footer-text">Pronto para novos desafios?</p>
+          <a href="trilha-afro.html" class="btn btn-primary-red font-bebas btn-next-modulo" style="text-decoration: none; text-align: center;">
+            <span class="btn-label">IR PARA O PRÓXIMO MÓDULO <span class="arrow-right">→</span></span>
+          </a>
+        </div>
+
+      </main>
+
+      <!-- ===== BOTTOM NAV BAR ===== -->
+      <nav class="bottom-nav">
+        <a href="ritmos.html" class="nav-item active">
+          <div class="nav-icon-wrap">
+            <img src="IMG/RITMOS.png" alt="Ritmos" class="nav-icon" />
+          </div>
+          <span class="nav-label font-bebas-ui">RITMOS</span>
+        </a>
+        <a href="aprender.html" class="nav-item">
+          <div class="nav-icon-wrap">
+            <img src="IMG/APRENDER.png" alt="Aprender" class="nav-icon" />
+          </div>
+          <span class="nav-label font-bebas-ui">APRENDER</span>
+        </a>
+        <a href="sobre.html" class="nav-item">
+          <div class="nav-icon-wrap">
+            <img src="IMG/SOBRE.png" alt="Sobre" class="nav-icon" />
+          </div>
+          <span class="nav-label font-bebas-ui">SOBRE</span>
+        </a>
+      </nav>
+
+    </div><!-- /.screen -->
+  </div><!-- /.shell -->
+
+  <!-- Video Modal Customizado -->
+  <div id="videoModal" class="video-modal-overlay">
+    <div class="video-modal-container">
+      
+      <!-- Botão Voltar (Estética do App) -->
+      <button id="closeVideoModal" class="btn-back-video" aria-label="Voltar">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+      </button>
+
+      <div id="youtubePlayer" style="width: 100%; height: 100%; flex: 1;"></div>
+
+    </div>
+  </div>
+
+  <!-- Exit Modal Overlay (Video) -->
+  <div class="modal-overlay" id="videoExitModal" style="z-index: 10000;">
+    <div class="modal-content">
+      <h2 class="font-bebas">SAIR DO VÍDEO?</h2>
+      <p>Tem certeza que quer voltar? A fase não será completada.</p>
+      <div class="modal-actions">
+        <button class="btn btn-outline modal-btn-no" id="btnVideoNo">NÃO</button>
+        <button class="btn btn-primary-red modal-btn-yes" id="btnVideoYes">SIM</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>  <script src="supabase.js"></script>  <script src="https://www.youtube.com/iframe_api"></script>
+  <script src="app.js"></script>
+</body>
+</html>

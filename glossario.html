@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="GINGA! – Glossário Popular" />
+  <title>GINGA! – Glossário Popular</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="shell" role="main">
+    <div class="screen glossario-screen">
+      
+      <!-- ===== HEADER: Topbar ===== -->
+      <header class="ginga-topbar">
+        <button class="btn-back" aria-label="Voltar">
+          <svg viewBox="0 0 24 24" fill="none" stroke="var(--clr-red)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+        </button>
+        <span class="ginga-topbar-title font-bebas" style="color: var(--clr-red);">GINGA+</span>
+        <div class="ginga-topbar-actions">
+          <button class="btn-settings" aria-label="Configurações" style="color: var(--clr-red);">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
+          </button>
+          <a href="perfil.html" class="user-avatar-wrap">
+            <img src="IMG/BOI%20DAN%C3%87ANDO.png" alt="Avatar" class="user-avatar" />
+          </a>
+        </div>
+      </header>
+
+      <main class="glossario-main-content">
+        
+        <div class="glossario-header-section">
+          <div class="glossario-top-icons">
+             <span class="music-note-icon music-note-small" aria-hidden="true"><img src="IMG/NOTA%20MUSICAL.png" alt="" style="height: 1.8em; width: auto; object-fit: contain;" /></span>
+             <div class="paw-icon-circle">
+               <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a3 3 0 0 1 3 3 3 3 0 0 1-3 3 3 3 0 0 1-3-3 3 3 0 0 1 3-3m-5 8a3 3 0 0 1 3 3 3 3 0 0 1-3 3 3 3 0 0 1-3-3 3 3 0 0 1 3-3m10 0a3 3 0 0 1 3 3 3 3 0 0 1-3 3 3 3 0 0 1-3-3 3 3 0 0 1 3-3m-5 8c2.2 0 4 1.8 4 4v1H8v-1c0-2.2 1.8-4 4-4z"/></svg>
+             </div>
+          </div>
+          <h1 class="font-bebas glossario-main-title">GLOSSÁRIO <br><span class="text-gold">POPULAR</span></h1>
+          <p class="glossario-intro-text">Um guia completo e amigável para você mergulhar nas expressões da nossa cultura!</p>
+        </div>
+
+        <!-- Search Bar -->
+        <div class="search-bar-wrap">
+          <input type="text" placeholder="Procure um termo..." class="glossario-search-input">
+          <button class="search-btn bg-gold">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#FFF" stroke-width="3"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          </button>
+        </div>
+
+        <!-- Terms List -->
+        <div class="terms-list">
+          
+          <!-- IJEXÁ -->
+          <div class="term-card">
+            <div class="term-icon-box bg-yellow-light">
+               <svg viewBox="0 0 24 24" fill="none" stroke="#B58A55" stroke-width="2"><path d="M2 12c4 0 4-4 8-4s4 4 8 4 4-4 8-4M2 18c4 0 4-4 8-4s4 4 8 4 4-4 8-4"/></svg>
+            </div>
+            <div class="term-info">
+              <h3 class="font-bebas text-red">IJEXÁ</h3>
+              <p>Ritmo de origem iorubá, base do afoxé. É o balanço suave das águas que vira música.</p>
+            </div>
+          </div>
+
+          <!-- ANARRIÊ -->
+          <div class="term-card">
+            <div class="term-icon-box bg-red-light">
+               <svg viewBox="0 0 24 24" fill="none" stroke="var(--clr-red)" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            </div>
+            <div class="term-info">
+              <h3 class="font-bebas text-red">ANARRIÊ</h3>
+              <p>Termo das quadrilhas juninas (do francês 'en arrière'). Hora de voltar pro lugar.</p>
+            </div>
+          </div>
+
+          <!-- MACULELÊ -->
+          <div class="term-card">
+            <div class="term-icon-box bg-teal-light">
+               <svg viewBox="0 0 24 24" fill="none" stroke="#0D6169" stroke-width="2"><path d="M4 4l16 16M20 4L4 20"/></svg>
+            </div>
+            <div class="term-info">
+              <h3 class="font-bebas text-red">MACULELÊ</h3>
+              <p>Dança folclórica que simula uma luta com bastões de madeira ao ritmo do atabaque.</p>
+            </div>
+          </div>
+
+          <!-- BOI-BUMBÁ FEATURED -->
+          <div class="featured-term-card">
+             <div class="featured-paw-circle">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a3 3 0 0 1 3 3 3 3 0 0 1-3 3 3 3 0 0 1-3-3 3 3 0 0 1 3-3m-5 8a3 3 0 0 1 3 3 3 3 0 0 1-3 3 3 3 0 0 1-3-3 3 3 0 0 1 3-3m10 0a3 3 0 0 1 3 3 3 3 0 0 1-3 3 3 3 0 0 1-3-3 3 3 0 0 1 3-3m-5 8c2.2 0 4 1.8 4 4v1H8v-1c0-2.2 1.8-4 4-4z"/></svg>
+             </div>
+             <span class="pill-gold font-bebas-ui">CONHEÇA MAIS</span>
+             <h2 class="font-bebas text-red">BOI-BUMBÁ</h2>
+             <p>Auto popular que narra a morte e ressurreição de um boi, mesclando influências indígenas, africanas e europeias.</p>
+          </div>
+
+          <!-- FREVO -->
+          <div class="term-card">
+            <div class="term-icon-box bg-red-light">
+               <svg viewBox="0 0 24 24" fill="none" stroke="var(--clr-red)" stroke-width="2"><path d="M12 2v20M2 12h20"/><circle cx="12" cy="12" r="10"/></svg>
+            </div>
+            <div class="term-info">
+              <h3 class="font-bebas text-red">FREVO</h3>
+              <p>Ritmo pernambucano frenético. O nome vem de 'ferver', pela agitação dos passistas.</p>
+            </div>
+          </div>
+
+          <!-- MARACATU -->
+          <div class="term-card">
+            <div class="term-icon-box bg-yellow-light">
+               <svg viewBox="0 0 24 24" fill="none" stroke="#B58A55" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+            </div>
+            <div class="term-info">
+              <h3 class="font-bebas text-red">MARACATU</h3>
+              <p>Cortejo real de tradição afro-brasileira. Pode ser de Baque Virado ou Baque Solto.</p>
+            </div>
+          </div>
+
+          <!-- SAMBA DE RODA -->
+          <div class="term-card">
+            <div class="term-icon-box bg-teal-light">
+               <svg viewBox="0 0 24 24" fill="none" stroke="#0D6169" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            </div>
+            <div class="term-info">
+              <h3 class="font-bebas text-red">SAMBA DE RODA</h3>
+              <p>Patrimônio da Humanidade. Surgiu no Recôncavo Baiano, unindo dança, poesia e música.</p>
+            </div>
+          </div>
+
+          <!-- CHULA -->
+          <div class="term-card">
+            <div class="term-icon-box bg-red-light">
+               <svg viewBox="0 0 24 24" fill="none" stroke="var(--clr-red)" stroke-width="2"><path d="M15 18a3 3 0 1 1-6 0c0-1.66 1.34-3 3-3s3 1.34 3 3z"/><path d="M12 15V3"/></svg>
+            </div>
+            <div class="term-info">
+              <h3 class="font-bebas text-red">CHULA</h3>
+              <p>Desafio de sapateado masculino típico do Rio Grande do Sul, realizado sobre uma lança.</p>
+            </div>
+          </div>
+
+          <!-- CARIMBÓ -->
+          <div class="term-card">
+            <div class="term-icon-box bg-yellow-light">
+               <svg viewBox="0 0 24 24" fill="none" stroke="#B58A55" stroke-width="2"><path d="M12 20a8 8 0 1 0 0-16 8 8 0 0 0 0 16z"/><path d="M12 14v6"/><path d="M12 10V4"/></svg>
+            </div>
+            <div class="term-info">
+              <h3 class="font-bebas text-red">CARIMBÓ</h3>
+              <p>Dança de roda do Pará. O nome refere-se ao tambor artesanal usado para marcar o ritmo.</p>
+            </div>
+          </div>
+
+          <!-- ALAVANTÚ -->
+          <div class="term-card">
+            <div class="term-icon-box bg-red-light">
+               <svg viewBox="0 0 24 24" fill="none" stroke="var(--clr-red)" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </div>
+            <div class="term-info">
+              <h3 class="font-bebas text-red">ALAVANTÚ</h3>
+              <p>Comando da quadrilha (do francês 'en avant tout'). Significa 'avancem todos'.</p>
+            </div>
+          </div>
+
+          <!-- BALANCÊ -->
+          <div class="term-card">
+            <div class="term-icon-box bg-yellow-light">
+               <svg viewBox="0 0 24 24" fill="none" stroke="#B58A55" stroke-width="2"><path d="M2 12c4 0 4-4 8-4s4 4 8 4 4-4 8-4M2 18c4 0 4-4 8-4s4 4 8 4 4-4 8-4"/></svg>
+            </div>
+            <div class="term-info">
+              <h3 class="font-bebas text-red">BALANCÊ</h3>
+              <p>Passo de quadrilha onde os casais balançam o corpo no mesmo lugar.</p>
+            </div>
+          </div>
+
+          <!-- BREAKING -->
+          <div class="term-card">
+            <div class="term-icon-box bg-teal-light">
+               <svg viewBox="0 0 24 24" fill="none" stroke="#0D6169" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+            </div>
+            <div class="term-info">
+              <h3 class="font-bebas text-red">BREAKING</h3>
+              <p>Primeiro estilo de dança do Hip-Hop, criado nas ruas do Bronx nos anos 70.</p>
+            </div>
+          </div>
+
+          <!-- POPPING -->
+          <div class="term-card">
+            <div class="term-icon-box bg-red-light">
+               <svg viewBox="0 0 24 24" fill="none" stroke="var(--clr-red)" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v8M8 12h8"/></svg>
+            </div>
+            <div class="term-info">
+              <h3 class="font-bebas text-red">POPPING</h3>
+              <p>Estilo de dança urbana focado na contração e relaxamento rápido dos músculos.</p>
+            </div>
+          </div>
+
+          <!-- FANDANGO -->
+          <div class="term-card">
+            <div class="term-icon-box bg-yellow-light">
+               <svg viewBox="0 0 24 24" fill="none" stroke="#B58A55" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            </div>
+            <div class="term-info">
+              <h3 class="font-bebas text-red">FANDANGO</h3>
+              <p>Conjunto de danças tradicionais gaúchas, sempre animadas com gaita e violão.</p>
+            </div>
+          </div>
+
+          <!-- SAPATEIO -->
+          <div class="term-card">
+            <div class="term-icon-box bg-teal-light">
+               <svg viewBox="0 0 24 24" fill="none" stroke="#0D6169" stroke-width="2"><path d="M12 2l3 6 6 1-4 4 1 6-6-3-6 3 1-6-4-4 6-1z"/></svg>
+            </div>
+            <div class="term-info">
+              <h3 class="font-bebas text-red">SAPATEIO</h3>
+              <p>Batida forte dos pés no chão, muito comum nas danças tradicionais gaúchas.</p>
+            </div>
+          </div>
+
+          <!-- AFOXÉ -->
+          <div class="term-card">
+            <div class="term-icon-box bg-red-light">
+               <svg viewBox="0 0 24 24" fill="none" stroke="var(--clr-red)" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+            </div>
+            <div class="term-info">
+              <h3 class="font-bebas text-red">AFOXÉ</h3>
+              <p>Cortejo de rua ligado ao candomblé, também conhecido como "candomblé de rua".</p>
+            </div>
+          </div>
+
+          <!-- GINGA -->
+          <div class="term-card">
+            <div class="term-icon-box bg-yellow-light">
+               <svg viewBox="0 0 24 24" fill="none" stroke="#B58A55" stroke-width="2"><path d="M2 12h20M12 2v20M4 4l16 16M20 4L4 20"/></svg>
+            </div>
+            <div class="term-info">
+              <h3 class="font-bebas text-red">GINGA</h3>
+              <p>Movimento fundamental da capoeira e base de diversas danças afro-brasileiras.</p>
+            </div>
+          </div>
+
+        </div>
+
+      </main>
+
+      <!-- ===== BOTTOM NAV BAR ===== -->
+      <nav class="bottom-nav">
+        <a href="ritmos.html" class="nav-item">
+          <div class="nav-icon-wrap">
+            <img src="IMG/RITMOS.png" alt="Ritmos" class="nav-icon" />
+          </div>
+          <span class="nav-label font-bebas-ui">RITMOS</span>
+        </a>
+        <a href="aprender.html" class="nav-item active">
+          <div class="nav-icon-wrap">
+            <img src="IMG/APRENDER.png" alt="Aprender" class="nav-icon" />
+          </div>
+          <span class="nav-label font-bebas-ui">APRENDER</span>
+        </a>
+        <a href="sobre.html" class="nav-item">
+          <div class="nav-icon-wrap">
+            <img src="IMG/SOBRE.png" alt="Sobre" class="nav-icon" />
+          </div>
+          <span class="nav-label font-bebas-ui">SOBRE</span>
+        </a>
+      </nav>
+
+    </div><!-- /.screen -->
+  </div><!-- /.shell -->
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>  <script src="supabase.js"></script>  <script src="app.js"></script>
+</body>
+</html>
+
+

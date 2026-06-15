@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="GINGA! – Escolha seu apelido" />
+  <title>GINGA! – Apelido</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="shell" role="main">
+    <div class="screen apelido-screen">
+      
+      <!-- Faint background lines -->
+      <div class="bg-lines" aria-hidden="true"></div>
+
+      <!-- ===== HEADER: Imagem e Título ===== -->
+      <header class="apelido-header">
+        <div class="apelido-image-container">
+          <span class="music-note-small float-left-apelido" aria-hidden="true"><img src="IMG/NOTA%20MUSICAL.png" alt="" style="height: 1.5em; width: auto; object-fit: contain;" /></span>
+          
+          <!-- Imagem principal com circulo rosa atrás -->
+          <div class="apelido-hero-bg"></div>
+          <img src="IMG/BOI%20DAN%C3%87ANDO.png" alt="Personagem Ginga" class="apelido-hero-img" onerror="this.src='IMG/Captura%20de%20tela%202026-05-02%20151926.png'" />
+          
+          <span class="music-note-small float-right-apelido" aria-hidden="true"><img src="IMG/NOTA%20MUSICAL.png" alt="" style="height: 1.5em; width: auto; object-fit: contain;" /></span>
+        </div>
+
+        <h1 class="font-bebas apelido-title">COMO QUER SER<br>CHAMADO?</h1>
+        <p class="apelido-subtitle">
+          Sua identidade no Ginga+ começa com<br>um nome que represente seu ritmo.
+        </p>
+      </header>
+
+      <!-- ===== MAIN FORM ===== -->
+      <main class="apelido-main">
+        <span class="music-note-small float-left-input" aria-hidden="true"><img src="IMG/NOTA%20MUSICAL.png" alt="" style="height: 1.5em; width: auto; object-fit: contain;" /></span>
+        
+        <form class="apelido-form" id="form-apelido" action="escolha-ginga.html">
+          <input type="text" id="apelido-input" class="font-bebas-ui apelido-input" placeholder="SEU APELIDO AQUI" />
+          
+          <button type="submit" class="btn btn-primary-red font-bebas btn-submit-apelido">
+            <span class="btn-label">CONTINUAR</span>
+          </button>
+        </form>
+
+        <p class="apelido-footer-text">VOCÊ PODERÁ MUDAR ISSO MAIS TARDE NO SEU PERFIL</p>
+      </main>
+
+    </div><!-- /.screen -->
+  </div><!-- /.shell -->
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>  <script src="supabase.js"></script>  <script src="app.js"></script>
+</body>
+</html>
+
+

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="GINGA! – Entrar" />
+  <title>GINGA! – Entrar</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="shell" role="main">
+    <div class="screen form-screen">
+
+      <!-- ===== HEADER: Logo, Título e subtítulo ===== -->
+      <header class="login-header">
+        <div class="login-logo-container">
+          <span class="music-note-small float-left" aria-hidden="true"><img src="IMG/NOTA%20MUSICAL.png" alt="" style="height: 1.2em; width: auto; object-fit: contain;" /></span>
+          <div class="login-logo-circle">
+            <img src="IMG/Captura%20de%20tela%202026-05-02%20151926.png" alt="GINGA!" class="login-drum-img" />
+          </div>
+          <span class="music-note-small float-right" aria-hidden="true"><img src="IMG/NOTA%20MUSICAL.png" alt="" style="height: 1.2em; width: auto; object-fit: contain;" /></span>
+        </div>
+
+        <h1 class="font-bebas login-title">VEM DANÇAR COM A<br>GENTE!</h1>
+        <p class="login-subtitle">
+          Sua jornada pelo movimento e pela<br>cultura brasileira começa aqui.
+        </p>
+      </header>
+
+      <!-- ===== MAIN FORM: Container rosa claro ===== -->
+      <main class="login-form-container">
+        <!-- Floating music note decorative -->
+        <div class="music-note-float-login" aria-hidden="true"><img src="IMG/NOTA%20MUSICAL.png" alt="" style="height: 1.2em; width: auto; object-fit: contain;" /></div>
+
+        <form class="login-form" id="form-login" action="ritmos.html">
+          
+          <div class="input-group">
+            <label for="login-email" class="font-bebas-ui">E-MAIL</label>
+            <div class="input-with-icon">
+              <svg class="input-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+              <input type="email" id="login-email" placeholder="seu@email.com" />
+            </div>
+          </div>
+
+          <div class="input-group">
+            <label for="login-senha" class="font-bebas-ui">SENHA</label>
+            <div class="input-with-icon">
+              <svg class="input-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+              <input type="password" id="login-senha" placeholder="••••••••" />
+              <button type="button" class="btn-toggle-password" aria-label="Mostrar senha">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+              </button>
+            </div>
+          </div>
+
+          <div class="forgot-password-wrap">
+            <a href="#" class="forgot-password">Esqueceu a senha?</a>
+          </div>
+
+          <button type="submit" class="btn btn-primary-red font-bebas btn-submit-login">
+            <span class="btn-label">ENTRAR</span>
+          </button>
+
+        </form>
+      </main>
+
+      <footer class="login-footer">
+        <p class="login-link-bottom">
+          Novo por aqui? <a href="criar-conta.html" id="link-criar-conta">Criar conta</a>
+        </p>
+      </footer>
+
+    </div><!-- /.screen -->
+  </div><!-- /.shell -->
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>  <script src="supabase.js"></script>  <script src="app.js"></script>
+</body>
+</html>
+
+

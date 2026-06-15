@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="GINGA! – Recompensa" />
+  <title>GINGA! – Recompensa</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="shell" role="main">
+    <div class="screen recompensa-screen">
+      
+      <!-- Faint background lines -->
+      <div class="bg-lines" aria-hidden="true" style="display: block; opacity: 0.5;"></div>
+
+      <main class="recompensa-main">
+        
+        <div class="recompensa-hero">
+          
+          <div class="glow-bg"></div>
+          
+          <span class="music-note-small float-left-recompensa" aria-hidden="true"><img src="IMG/NOTA%20MUSICAL.png" alt="" style="height: 1.5em; width: auto;" /></span>
+          <span class="music-note-small float-right-recompensa" aria-hidden="true"><img src="IMG/NOTA%20MUSICAL.png" alt="" style="height: 2em; width: auto;" /></span>
+          
+          <!-- Faint lines crossing behind trophy -->
+          <svg class="recompensa-lines" viewBox="0 0 100 100" preserveAspectRatio="none">
+            <path d="M0 60 Q 25 40, 50 60 T 100 40" stroke="#C8A888" stroke-width="2" fill="none" opacity="0.4"/>
+            <path d="M0 80 Q 30 90, 60 70 T 100 80" stroke="#C8A888" stroke-width="1.5" fill="none" opacity="0.3"/>
+          </svg>
+
+          <img src="IMG/trof%C3%A9u.png" alt="Troféu" class="recompensa-img anim-trophy-pop" />
+          
+        </div>
+
+        <div class="recompensa-text anim-fade-up">
+          <h1 class="font-bebas recompensa-title">MANDOU MUITO BEM!</h1>
+          <div class="recompensa-subtitle-wrap">
+            <span class="music-note-small inline-note-left"><img src="IMG/NOTA%20MUSICAL.png" alt="" /></span>
+            <p class="recompensa-subtitle">
+              Você completou um passo de dança<br>e está dominando a ginga!
+            </p>
+            <span class="music-note-small inline-note-right"><img src="IMG/NOTA%20MUSICAL.png" alt="" /></span>
+          </div>
+        </div>
+
+        <div class="recompensa-action anim-fade-up-delay">
+          <a href="trilha.html" class="btn btn-primary-red font-bebas btn-continuar-jornada">
+            <span class="btn-label">CONTINUAR JORNADA <span class="arrow-right">→</span></span>
+          </a>
+        </div>
+
+      </main>
+
+      <!-- Faint decorative bottom icons -->
+      <div class="recompensa-footer-decor">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22V12M12 12C12 12 10 7 6 7C2 7 2 12 6 12C10 12 12 12 12 12ZM12 12C12 12 14 6 18 6C22 6 22 11 18 11C14 11 12 12 12 12Z"/></svg>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22V12M12 12C12 12 10 7 6 7C2 7 2 12 6 12C10 12 12 12 12 12ZM12 12C12 12 14 6 18 6C22 6 22 11 18 11C14 11 12 12 12 12Z"/></svg>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22V12M12 12C12 12 10 7 6 7C2 7 2 12 6 12C10 12 12 12 12 12ZM12 12C12 12 14 6 18 6C22 6 22 11 18 11C14 11 12 12 12 12Z"/></svg>
+      </div>
+
+    </div><!-- /.screen -->
+  </div><!-- /.shell -->
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>  <script src="supabase.js"></script>  <script src="app.js"></script>
+</body>
+</html>
+
+

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="GINGA! – Aplicativo da comunidade de quadrilha junina. Comece agora ou entre na comunidade." />
+  <title>GINGA! – Tela Inicial</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="shell" role="main">
+    <div class="screen">
+
+      <!-- ===== HERO: imagem de fundo completa (contém tambor + GINGA!) ===== -->
+      <section
+        class="hero"
+        aria-label="Logo GINGA! com tambor junino"
+        style="background-image: url('IMG/Captura de tela 2026-05-02 151926.png');"
+      >
+        <!-- Apenas overlay sutil para não alterar o design -->
+        <div class="hero-overlay" aria-hidden="true"></div>
+      </section>
+
+      <!-- ===== ACTIONS: painel escuro com botões ===== -->
+      <section class="actions" aria-label="Ações principais do aplicativo">
+
+        <a
+          href="criar-conta.html"
+          id="btn-comecar"
+          class="btn btn-primary"
+          role="button"
+          aria-label="Começar agora — acessar o aplicativo GINGA!"
+        >
+          <span class="btn-label">COMEÇAR AGORA</span>
+          <span class="btn-icon" aria-hidden="true">→</span>
+        </a>
+
+        <a
+          href="login.html"
+          id="btn-comunidade"
+          class="btn btn-secondary"
+          role="button"
+          aria-label="Já sou da comunidade — entrar com minha conta"
+        >
+          JÁ SOU DA COMUNIDADE
+        </a>
+
+      </section>
+
+    </div><!-- /.screen -->
+  </div><!-- /.shell -->
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>  <script src="supabase.js"></script>  <script src="app.js"></script>
+</body>
+</html>
+
+

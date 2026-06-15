@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="GINGA! – Criar conta" />
+  <title>GINGA! – Criar Conta</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="shell" role="main">
+    <div class="screen form-screen">
+
+      <!-- ===== HEADER: Título e subtítulo ===== -->
+      <header class="form-header">
+        <div class="blob-title">
+          <h1 class="font-bebas">FAÇA PARTE DO MOVIMENTO</h1>
+        </div>
+        <p class="subtitle">
+          <span class="music-note" aria-hidden="true"><img src="IMG/NOTA%20MUSICAL.png" alt="" style="height: 1.2em; width: auto; object-fit: contain;" /></span>
+          Aprenda a alma da dança com<br>leveza e alegria.
+        </p>
+      </header>
+
+      <!-- ===== MAIN FORM: Container branco ===== -->
+      <main class="form-container">
+        <!-- Floating music note decorative -->
+        <div class="music-note-float" aria-hidden="true"><img src="IMG/NOTA%20MUSICAL.png" alt="" style="height: 1.2em; width: auto; object-fit: contain;" /></div>
+
+        <form class="signup-form" id="form-criar-conta" action="apelido.html">
+          
+          <div class="input-group">
+            <label for="nome" class="font-bebas-ui">NOME COMPLETO</label>
+            <input type="text" id="nome" placeholder="Como devemos te chamar?" />
+          </div>
+
+          <div class="input-group">
+            <label for="email" class="font-bebas-ui">E-MAIL</label>
+            <input type="email" id="email" placeholder="seu@email.com" />
+          </div>
+
+          <div class="input-group">
+            <label for="senha" class="font-bebas-ui">SENHA</label>
+            <input type="password" id="senha" placeholder="••••••••" />
+          </div>
+
+          <div class="input-group">
+            <label for="confirmar" class="font-bebas-ui">CONFIRMAR</label>
+            <input type="password" id="confirmar" placeholder="••••••••" />
+          </div>
+
+          <button type="submit" class="btn btn-primary-red font-bebas btn-submit">
+            <span class="btn-label">CRIAR MINHA CONTA</span>
+          </button>
+
+          <p class="login-link">
+            Já tem uma conta? <a href="login.html">Entre agora</a>
+          </p>
+
+          <a href="apelido.html" class="guest-link font-bebas" id="btn-convidado">ENTRAR COMO CONVIDADO</a>
+
+        </form>
+      </main>
+
+    </div><!-- /.screen -->
+  </div><!-- /.shell -->
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>  <script src="supabase.js"></script>  <script src="app.js"></script>
+</body>
+</html>
+
+
