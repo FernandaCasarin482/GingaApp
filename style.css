@@ -5687,3 +5687,44 @@ input:checked+.slider:before {
 
 [data-theme="dark"] .equipe-card span { color: #A0A0A0 !important; }
 
+
+/* ================================================================
+   TELA PERFIL - CONTRASTE MODO ESCURO
+   ================================================================ */
+[data-theme="dark"] .bg-gold-light { background: rgba(253, 199, 56, 0.15) !important; }
+
+[data-theme="dark"] .progress-card,
+[data-theme="dark"] .conquista-card {
+  background: var(--bg-card-alt) !important;
+}
+
+[data-theme="dark"] .progress-label {
+  color: #E0E0E0 !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.5px;
+}
+
+[data-theme="dark"] .progress-num {
+  color: #FFF !important;
+}
+
+[data-theme="dark"] .progress-num small {
+  color: #CCCCCC !important;
+  font-weight: 700 !important;
+}
+
+[data-theme="dark"] .conquista-card h4 {
+  color: #FF8585 !important;
+  letter-spacing: 1px;
+}
+
+[data-theme="dark"] .conquista-card p {
+  color: #E0E0E0 !important;
+  font-weight: 700 !important;
+}
+
+[data-theme="dark"] .stat-pill-red span,
+[data-theme="dark"] .pill-mestre {
+  font-weight: 700 !important;
+}
+
